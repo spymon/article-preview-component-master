@@ -81,24 +81,106 @@ main {
   }
 }
 
-.toolbox {
-  display: block;
-}
-
-.btn {
+.btnBx {
   position: relative;
   grid-area: btn;
   width: 32px;
   height: 32px;
   justify-self: end;
   align-self: center;
-}
+  transition: all 0.5s linear;
 
-.btn__sci {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 50%;
-  outline: none;
-  cursor: pointer;
+  .btn__sci {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &:hover {
+      background-color: $Dark-Grayish-Blue;
+      transition: all 0.4s;
+
+      path {
+        fill: $Light-Grayish-Blue;
+        transition: all 0.4s;
+      }
+    }
+  }
+
+  .toolbox {
+    position: absolute;
+    bottom: 30px;
+    right: 50%;
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(50%);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+    background-color: $Dark-Grayish-Blue;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 12px solid transparent;
+      border-top-color: $Dark-Grayish-Blue;
+    }
+
+    &__title {
+      color: $Grayish-Blue;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      margin-right: 22px;
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &__item path {
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    &__item:hover path {
+      fill: $Grayish-Blue;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+  }
+
+  &.active {
+    .toolbox {
+      display: flex;
+      bottom: 65px;
+      opacity: 1;
+      pointer-events: auto;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .btn__sci {
+      background-color: $Dark-Grayish-Blue;
+      transition: all 0.4s;
+
+      path {
+        fill: $Light-Grayish-Blue;
+        transition: all 0.4s;
+      }
+    }
+  }
 }
