@@ -25,7 +25,7 @@
   <body>
     <main>
       <article class="card">
-        <div class="card__imgBx"></div>
+        <div class="card__imgBx" title="Image of a green furniture."></div>
         <div class="card__content">
           <div class="card__body">
             <h1 class="card__heading">
@@ -49,8 +49,19 @@
             <h2 class="avatar__name">Michelle Appleton</h2>
             <p class="avatar__date">28 Jun 2020</p>
             <div class="btnBx">
-              <button class="btn__sci">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+              <button
+                class="btn__sci"
+                aria-expanded="false"
+                aria-controls="toolbox-sci"
+                role="tooltip"
+                id="btn1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="13"
+                  title="share on social media"
+                >
                   <path
                     fill="#6E8098"
                     d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
@@ -58,15 +69,16 @@
                 </svg>
               </button>
             </div>
-            <div class="toolbox">
+            <div class="toolbox" id="toolbox-sci">
               <p class="toolbox__title">Share</p>
               <ul class="toolbox__list">
                 <li class="toolbox__item">
-                  <a href="#"
+                  <a href="https://www.facebook.com/" target="_blank"
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
                       height="20"
+                      title="share on facebook"
                     >
                       <path
                         fill="#FFF"
@@ -76,11 +88,12 @@
                   </a>
                 </li>
                 <li class="toolbox__item">
-                  <a href="#"
+                  <a href="https://twitter.com/" target="_blank"
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
                       height="17"
+                      title="share on twitter"
                     >
                       <path
                         fill="#FFF"
@@ -90,11 +103,12 @@
                   </a>
                 </li>
                 <li class="toolbox__item">
-                  <a href="#"
+                  <a href="https://www.pinterest.com/" target="_blank"
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
                       height="20"
+                      title="share on pinterest"
                     >
                       <path
                         fill="#FFF"
